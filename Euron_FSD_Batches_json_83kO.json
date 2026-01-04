@@ -1,0 +1,563 @@
+{
+	"info": {
+		"_postman_id": "a89e2caf-f9b9-4739-8930-1fc669995631",
+		"name": "Euron FSD Batches",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7035408",
+		"_collection_link": "https://ajay-personal-team.postman.co/workspace/Ajay-WorkSpace~deafa9d3-d064-4c35-a1d8-4313997833de/collection/7035408-a89e2caf-f9b9-4739-8930-1fc669995631?action=share&source=collection_link&creator=7035408"
+	},
+	"item": [
+		{
+			"name": "batch-1",
+			"item": [
+				{
+					"name": "todo-api",
+					"item": [
+						{
+							"name": "Get All Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrlV1}}/todos?page=1&limit=10",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"todos"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Todo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"test 3\",\r\n    \"description\": \"IDK anything\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrlV1}}/todos",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"todos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Todo By Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"API Conversion from File based to DB based\",\r\n    \"description\": \"IDK anything\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrlV1}}/todos/693c4a65d9e7b208e009deac",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"todos",
+										"693c4a65d9e7b208e009deac"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Todo",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"completed\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrlV1}}/todos/693c4f0c56191f18eea540ad",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"todos",
+										"693c4f0c56191f18eea540ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Todo",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrlV1}}/todos/693c4f0c56191f18eea540ad",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"todos",
+										"693c4f0c56191f18eea540ad"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "blog-api",
+					"item": [
+						{
+							"name": "Register User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"abcc\",\r\n    \"email\": \"accc@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrlV1}}/auth/register",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"a@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrlV1}}/auth/login",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get LoggedIn User Profile",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Refresh Access Token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2QzZDAwMGEwOTdlOGVhODMxZGE2MCIsInVzZXJuYW1lIjoiYSIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NjU2OTk0MjEsImV4cCI6MTc2NjMwNDIyMX0.H5PVfBhGILGqxE6Gy3yHt8qYVK0VLGS0QKxXTqLRCrI\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrlV1}}/auth/refresh-token",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"auth",
+										"refresh-token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Blogs",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2QzZDAwMGEwOTdlOGVhODMxZGE2MCIsInVzZXJuYW1lIjoiYSIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NjYxNjEyMDgsImV4cCI6MTc2NjE2NDgwOH0.8jHrcDNWgSeO_m5U36odI5-5dnfftdJlzQ5dZ91ROBw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrlV1}}/blogs",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"blogs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Blog",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2QzZDAwMGEwOTdlOGVhODMxZGE2MCIsInVzZXJuYW1lIjoiYSIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NjYxNjEyMDgsImV4cCI6MTc2NjE2NDgwOH0.8jHrcDNWgSeO_m5U36odI5-5dnfftdJlzQ5dZ91ROBw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "a2",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "a2",
+											"type": "text"
+										},
+										{
+											"key": "shortDescription",
+											"value": "a2",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/ajays/OneDrive/Pictures/Screenshots/Screenshot 2025-11-21 101923.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrlV1}}/blogs",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"blogs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Publish Blog",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2QzZDAwMGEwOTdlOGVhODMxZGE2MCIsInVzZXJuYW1lIjoiYSIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NjU3MDM5MzAsImV4cCI6MTc2NTcwNzUzMH0.k2lRfXuUjeIBuzqhBrAXUY5j2me89FPgcgWWCdq9azE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"blogId\": \"693e82d19f75c371aaef2625\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrlV1}}/blogs/publish",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"blogs",
+										"publish"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Blog",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2U4ODgwOGIxYzBmYjVlZjc2YmViMCIsInVzZXJuYW1lIjoiaW1yYW4uYWxpIiwiZW1haWwiOiJpbXJhbi5hbGlAZ21haWwuY29tIiwiaWF0IjoxNzY1NzA1ODY4LCJleHAiOjE3NjU3MDk0Njh9.bAd8c4Iu7d1Hl3HoEPWKu3xD7WpGE8voVQ0h2IZd_qs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Mera naam Imran Ali hai\",\r\n    \"content\": \"acbsdjdjbfdvjbfdjkf\",\r\n    \"tags\": [\"a\", \"b\"],\r\n    \"shortDescription\": \"fsvfdhdfhvdfhfbdhjd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrlV1}}/blogs/693e82d19f75c371aaef2625",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"blogs",
+										"693e82d19f75c371aaef2625"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Blog",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2QzZDAwMGEwOTdlOGVhODMxZGE2MCIsInVzZXJuYW1lIjoiYSIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NjYxNjEyMDgsImV4cCI6MTc2NjE2NDgwOH0.8jHrcDNWgSeO_m5U36odI5-5dnfftdJlzQ5dZ91ROBw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUrlV1}}/blogs/694581826a2a07eff424e38f",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"blogs",
+										"694581826a2a07eff424e38f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Blog By Slug",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2QzZDAwMGEwOTdlOGVhODMxZGE2MCIsInVzZXJuYW1lIjoiYSIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NjU3MDM5MzAsImV4cCI6MTc2NTcwNzUzMH0.k2lRfXuUjeIBuzqhBrAXUY5j2me89FPgcgWWCdq9azE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUrlV1}}/blogs/abc-abc",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"blogs",
+										"abc-abc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2QzZDAwMGEwOTdlOGVhODMxZGE2MCIsInVzZXJuYW1lIjoiYSIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NjYxNjEyMDgsImV4cCI6MTc2NjE2NDgwOH0.8jHrcDNWgSeO_m5U36odI5-5dnfftdJlzQ5dZ91ROBw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"New Comment 4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrlV1}}/comments/6945815a6a2a07eff424e38c",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"comments",
+										"6945815a6a2a07eff424e38c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Comment of Blog",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2QzZDAwMGEwOTdlOGVhODMxZGE2MCIsInVzZXJuYW1lIjoiYSIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NjYxNjEyMDgsImV4cCI6MTc2NjE2NDgwOH0.8jHrcDNWgSeO_m5U36odI5-5dnfftdJlzQ5dZ91ROBw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrlV1}}/comments/6945815a6a2a07eff424e38c",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"comments",
+										"6945815a6a2a07eff424e38c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Comment of Blog",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2QzZDAwMGEwOTdlOGVhODMxZGE2MCIsInVzZXJuYW1lIjoiYSIsImVtYWlsIjoiYUBnbWFpbC5jb20iLCJpYXQiOjE3NjYxNjEyMDgsImV4cCI6MTc2NjE2NDgwOH0.8jHrcDNWgSeO_m5U36odI5-5dnfftdJlzQ5dZ91ROBw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrlV1}}/comments/6945875f13ca91a7d8248a0e",
+									"host": [
+										"{{baseUrlV1}}"
+									],
+									"path": [
+										"comments",
+										"6945875f13ca91a7d8248a0e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
